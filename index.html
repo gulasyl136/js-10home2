@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="light-theme">
+
+    <button id="themeToggle">Переключить тему</button>
+    <h1>Привет, мир!</h1>
+    <p>Сегодня солнечный день.</p>
+    
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+    
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-theme')) {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                themeToggle.textContent = 'Светлая тема';
+            } else {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                themeToggle.textContent = 'Тёмная тема';
+            }
+        });
+    </script>
+    <!-- <h1>DOM</h1>
+    <h1 class="class">Class</h1>
+    <h1 id="id">DOM</h1>
+    <p>Lorem, ipsum dolor.</p>
+    <p class="lorem">Lorem, ipsum dolor.</p>
+    <p id="dis">Lorem, ipsum dolor.</p>
+    <script src="./app.js"></script> -->
+</body>
+</html>
